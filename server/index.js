@@ -146,7 +146,10 @@ app.get('/stream', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-log(`Starting server on port ${PORT}...`);
-app.listen(PORT, '0.0.0.0', () => {
-  log(`Music App Backend running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, '0.0.0.0', () => {
+    log(`Music App Backend running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
