@@ -16,6 +16,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAudio } from '../context/AudioContext';
 import { useToast } from '../context/ToastContext';
 import { useAudioPlayerStatus } from 'expo-audio';
+import { StatusBar as RNStatusBar } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -141,22 +142,22 @@ export const PlayerModal: React.FC<PlayerModalProps> = ({ visible, onClose }) =>
             </TouchableOpacity>
             
             <TouchableOpacity onPress={playPrevious}>
-              <Ionicons name="play-skip-back" size={35} color="#FFF" />
+              <Ionicons name="play-skip-back" size={35} color="#FFFFFF" />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.playButton} onPress={togglePlayPause}>
-              <Ionicons name={player?.playing ? "pause" : "play"} size={40} color="#000" />
+              <Ionicons name={player?.playing ? "pause" : "play"} size={36} color="#000000" />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={playNext}>
-              <Ionicons name="play-skip-forward" size={35} color="#FFF" />
+              <Ionicons name="play-skip-forward" size={35} color="#FFFFFF" />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={toggleRepeat}>
               <Ionicons 
                 name={repeatMode === 'track' ? "repeat" : "repeat-outline"} 
                 size={30} 
-                color={repeatMode !== 'off' ? "#1DB954" : "#FFF"} 
+                color={repeatMode !== 'off' ? "#1DB954" : "#FFFFFF"} 
               />
               {repeatMode === 'track' && <Text style={styles.repeatOneText}>1</Text>}
             </TouchableOpacity>
@@ -186,7 +187,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingTop: Platform.OS === 'android' ? (RNStatusBar.currentHeight || 0) + 10 : 10,
+    paddingBottom: 10,
   },
   headerTextContainer: {
     alignItems: 'center',

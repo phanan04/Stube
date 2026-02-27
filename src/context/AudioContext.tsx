@@ -83,8 +83,11 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
-  const playSong = (song: Song, playlist?: Song[]) => {
+  const playSong = async (song: Song, playlist?: Song[]) => {
     try {
+      // Small delay to ensure player is ready
+      if (player.playing) await player.pause();
+      
       player.replace(song.url);
       player.play();
       setCurrentSong(song);

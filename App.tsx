@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Platform } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
@@ -85,14 +85,15 @@ const styles = StyleSheet.create({
   },
   bottomSection: {
     backgroundColor: '#121212',
-    borderTopWidth: 0.5,
-    borderTopColor: '#333',
+    borderTopWidth: 0.8,
+    borderTopColor: '#222',
+    paddingBottom: Platform.OS === 'ios' ? 20 : 0, // Extra padding for iOS home indicator
   },
   tabBar: {
     backgroundColor: '#121212',
     borderTopWidth: 0,
-    height: 60,
-    paddingBottom: 8,
+    height: 65,
+    paddingBottom: 10,
   },
   tabLabel: {
     fontSize: 10,
