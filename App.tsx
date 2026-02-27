@@ -9,6 +9,7 @@ import { HomeScreen } from './src/screens/HomeScreen';
 import { SearchScreen } from './src/screens/SearchScreen';
 import { DownloadsScreen } from './src/screens/DownloadsScreen';
 import { LibraryScreen } from './src/screens/LibraryScreen';
+import { LikedSongsScreen } from './src/screens/LikedSongsScreen';
 import { MiniPlayer } from './src/components/MiniPlayer';
 
 const Tab = createBottomTabNavigator();
@@ -58,6 +59,14 @@ export default function App() {
               <Tab.Screen name="Search" component={SearchScreen} />
               <Tab.Screen name="Library" component={LibraryScreen} />
               <Tab.Screen name="Downloads" component={DownloadsScreen} />
+              <Tab.Screen 
+                name="LikedSongs" 
+                component={LikedSongsScreen} 
+                options={{ 
+                  tabBarButton: () => null,
+                  tabBarItemStyle: { display: 'none' }
+                }} 
+              />
             </Tab.Navigator>
           </NavigationContainer>
 
@@ -78,19 +87,18 @@ const styles = StyleSheet.create({
   },
   playerWrapper: {
     position: 'absolute',
-    bottom: 58,
+    bottom: 60, // Sits exactly on top of standard TabBar height
     left: 0,
     right: 0,
     zIndex: 10,
+    backgroundColor: '#121212', // Add background to prevent transparency issues
   },
   tabBar: {
     backgroundColor: 'rgba(18, 18, 18, 0.95)',
     borderTopWidth: 0,
-    position: 'absolute',
     height: 60,
     paddingBottom: 5,
-    elevation: 0,
-    bottom: 0,
+    elevation: 8,
   },
   tabLabel: {
     fontSize: 10,

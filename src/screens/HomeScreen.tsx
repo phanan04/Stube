@@ -182,9 +182,10 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   greeting: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 28,
+    fontWeight: '800',
     color: '#FFF',
+    letterSpacing: -0.8,
   },
   headerIcons: {
     flexDirection: 'row',
@@ -194,11 +195,12 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: '#FFF',
     paddingHorizontal: 16,
     marginBottom: 16,
-    marginTop: 10,
+    marginTop: 24,
+    letterSpacing: -0.5,
   },
   recentContainer: {
     flexDirection: 'row',
@@ -222,9 +224,10 @@ const styles = StyleSheet.create({
   recentText: {
     flex: 1,
     color: '#FFF',
-    fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: 13,
-    paddingHorizontal: 8,
+    paddingHorizontal: 10,
+    lineHeight: 18,
   },
   horizontalScroll: {
     paddingLeft: 16,
@@ -241,9 +244,10 @@ const styles = StyleSheet.create({
   },
   madeForYouTitle: {
     color: '#FFF',
-    fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: 14,
     marginBottom: 4,
+    letterSpacing: -0.2,
   },
   madeForYouArtist: {
     color: '#A7A7A7',

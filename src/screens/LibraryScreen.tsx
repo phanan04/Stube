@@ -65,10 +65,7 @@ export const LibraryScreen = () => {
             subtitle={`${likedSongs.length} bài hát đã lưu`} 
             color="#ec4899"
             onPress={() => {
-                // Since we temporarily removed LikedSongsStack in App.tsx due to install issues
-                // We show an info toast if it's not ready, but usually we'd navigate
-                showToast("Đang mở danh sách yêu thích...", "success");
-                // navigation.navigate('LikedSongs'); // Enable this after Stack install
+                navigation.navigate('LikedSongs');
             }}
           />
           <View style={styles.divider} />
@@ -81,12 +78,6 @@ export const LibraryScreen = () => {
           />
         </View>
 
-        <View style={styles.tipContainer}>
-           <Ionicons name="bulb-outline" size={20} color="#1DB954" />
-           <Text style={styles.tipText}>
-             Mẹo: Nhấn vào biểu tượng trái tim khi đang nghe nhạc để lưu bài hát vào thư viện của bạn.
-           </Text>
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -112,7 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '800',
     color: '#FFF',
-    letterSpacing: -0.5,
+    letterSpacing: -1,
   },
   headerRight: {
     flexDirection: 'row',
@@ -176,6 +167,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 16,
     fontWeight: '600',
+    letterSpacing: -0.3,
   },
   itemSubtitle: {
     color: '#B3B3B3',

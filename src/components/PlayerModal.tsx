@@ -200,9 +200,10 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: '#FFF',
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 13,
+    fontWeight: '700',
     marginTop: 2,
+    letterSpacing: 0.2,
   },
   content: {
     flex: 1,
@@ -229,9 +230,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#FFF',
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 26,
+    fontWeight: '800',
     width: width - 120,
+    letterSpacing: -0.8,
   },
   artist: {
     color: '#A7A7A7',
