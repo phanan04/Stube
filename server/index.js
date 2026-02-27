@@ -10,11 +10,16 @@ const app = express();
 app.use(cors());
 
 // Simple file logger
-const logFile = path.join(__dirname, 'server.log');
 const log = (msg) => {
   const time = new Date().toISOString();
   const line = `[${time}] ${msg}\n`;
-  fs.appendFileSync(logFile, line);
+  // Only log to console in production (Vercel filesystem is read-only)
+  if (process.env.NODE_ENV !== 'production') {
+    try {
+      const logFile = path.join(__dirname, 'server.log');
+      fs.appendFileSync(logFile, line);
+    } catch (e) {}
+  }
   console.log(line);
 };
 
@@ -38,6 +43,11 @@ const addToCache = (cacheMap, key, value) => {
   }
   cacheMap.set(key, value);
 };
+
+// ROOT ENDPOINT (Health check)
+app.get('/', (req, res) => {
+  res.json({ status: 'online', message: 'Music App Backend is running on Vercel!' });
+});
 
 // SUGGESTIONS ENDPOINT
 app.get('/suggestions', async (req, res) => {
