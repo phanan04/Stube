@@ -5,7 +5,7 @@ import { mockSongs, Song } from '../data/mockData';
 import { useAudio } from '../context/AudioContext';
 
 const { width } = Dimensions.get('window');
-const API_URL = 'http://192.168.1.81:3001';
+const API_URL = 'https://stube-phi.vercel.app';
 
 const SongCard = memo(({ song, onPress, isLoading, layout = 'vertical' }: any) => {
   if (layout === 'horizontal') {

@@ -21,7 +21,7 @@ import { downloadSong } from '../utils/downloadHelper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const RECENT_SEARCHES_KEY = 'RECENT_SEARCHES';
-const API_URL = 'http://192.168.1.81:3001';
+const API_URL = 'https://stube-phi.vercel.app';
 
 const SongItem = memo(({ item, onPlay, onDownload, isDownloading, isLoading }: any) => (
   <TouchableOpacity 

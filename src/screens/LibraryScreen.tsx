@@ -17,7 +17,7 @@ const LibraryItem = ({ icon, title, subtitle, color, onPress }: any) => (
       <Text style={styles.itemTitle}>{title}</Text>
       <Text style={styles.itemSubtitle}>{subtitle}</Text>
     </View>
-    <Ionicons name="chevron-forward" size={20} color="#333" />
+    <Ionicons name="chevron-forward" size={20} color="#555" />
   </TouchableOpacity>
 );
 
@@ -135,27 +135,27 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   section: {
-    marginHorizontal: 20,
-    marginTop: 20,
-    backgroundColor: '#1A1A1A',
+    marginHorizontal: 16,
+    marginTop: 10,
+    backgroundColor: 'rgba(255,255,255,0.05)',
     borderRadius: 16,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 8,
   },
   item: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 14,
+    paddingVertical: 16,
+    paddingHorizontal: 12,
   },
   divider: {
     height: 1,
     backgroundColor: 'rgba(255,255,255,0.05)',
-    marginLeft: 64,
+    marginLeft: 60,
   },
   iconContainer: {
-    width: 48,
-    height: 48,
-    borderRadius: 12,
+    width: 44,
+    height: 44,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 16,

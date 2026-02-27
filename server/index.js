@@ -126,7 +126,7 @@ app.get('/stream', async (req, res) => {
     const stream = ytdl(trackUrl, {
         filter: 'audioonly',
         quality: 'highestaudio',
-        highWaterMark: 1 << 20 // 1MB buffer is better for fast start
+        highWaterMark: 10 * 1024 * 1024 // 10MB chunk for fast response on serverless
     });
     
     stream.on('info', (info) => {
